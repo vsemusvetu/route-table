@@ -3,6 +3,6 @@ import { provideRouter } from '@angular/router';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter([]), // <-- сюда можно добавить маршруты, если есть
+    provideRouter([]),
   ],
 };
