@@ -1,0 +1,34 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"
+          [class.sortable]="true"
+          [class.asc]="sortColumn === 'address' && sortDirection === 'asc'"
+          [class.desc]="sortColumn === 'address' && sortDirection === 'desc'"
+          (click)="onSort({ column: 'address', direction: toggleDirection('address') })">
+        Адрес назначения
+      </th>
+      <th scope="col"
+          [class.sortable]="true"
+          [class.asc]="sortColumn === 'gateway' && sortDirection === 'asc'"
+          [class.desc]="sortColumn === 'gateway' && sortDirection === 'desc'"
+          (click)="onSort({ column: 'gateway', direction: toggleDirection('gateway') })">
+        Шлюз
+      </th>
+      <th scope="col"
+          [class.sortable]="true"
+          [class.asc]="sortColumn === 'interface' && sortDirection === 'asc'"
+          [class.desc]="sortColumn === 'interface' && sortDirection === 'desc'"
+          (click)="onSort({ column: 'interface', direction: toggleDirection('interface') })">
+        Интерфейс
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let route of routes">
+      <td>{{ route.address }}</td>
+      <td>{{ route.gateway }}</td>
+      <td>{{ route.interface }}</td>
+    </tr>
+  </tbody>
+</table>
